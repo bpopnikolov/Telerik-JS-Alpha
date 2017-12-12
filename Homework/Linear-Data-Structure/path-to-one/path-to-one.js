@@ -2,7 +2,6 @@ const gets = this.gets || require('readline-sync').question;
 const print = this.print || console.log;
 
 const start = +gets();
-let operation = '';
 
 // const pathToOne = (start) => {
 //     let x = start;
