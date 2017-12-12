@@ -178,8 +178,6 @@ class LinkedList {
 }
 
 // const list = new LinkedList();
-
-
 // list.append(4, 8, 9).insert(1, 5, 6, 7);
 // console.log(list.toArray());
 // list.removeAt(5);

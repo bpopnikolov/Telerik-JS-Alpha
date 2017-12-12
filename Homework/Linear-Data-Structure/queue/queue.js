@@ -17,6 +17,6 @@ class Queue {
         return this.linkedList.length;
     }
 }
-const queue = new Queue();
-console.log(queue);
+
+
 module.exports = Queue;

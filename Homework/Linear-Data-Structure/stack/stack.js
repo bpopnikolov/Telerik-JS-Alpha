@@ -1,5 +1,4 @@
 const LinkedList = require('./doubly-linked-list/doubly-linked-list');
-const Queue = require('./queue');
 
 class Stack {
     constructor() {
