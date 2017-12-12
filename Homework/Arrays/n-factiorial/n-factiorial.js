@@ -5,49 +5,42 @@ const print = this.print || console.log;
 const n = +gets();
 
 
-var factorial;
+const multiply = (a, b) => {
+    if (+a === 0 || +b === 0) {
+        return '0';
+    }
 
-factorial = (function() {
-    var process_carries;
-    process_carries = function(big, size) {
-        var carry, i, value, _ref;
-        for (i = _ref = size - 1; _ref <= 0 ? i <= 0 : i >= 0; _ref <= 0 ? i++ : i--) {
-            if (big[i] > 9) {
-                value = big[i];
-                carry = (value - (value % 10)) / 10;
-                big[i] = value % 10;
-                if (i === 0) {
-                    big.unshift(carry);
-                    big = process_carries(big, 1);
-                } else {
-                    big[i - 1] += carry;
-                }
-            }
-        }
-        return big;
-    };
-    factorial = function(x, raw) {
-        var big, carry, i, shifted, value, y, _ref;
-        if (raw == null) raw = false;
-        big = [1];
-        for (i = 1; 1 <= x ? i <= x : i >= x; 1 <= x ? i++ : i--) {
-            carry = 0;
-            shifted = false;
-            for (y = _ref = big.length - 1; _ref <= 0 ? y <= 0 : y >= 0; _ref <= 0 ? y++ : y--) {
-                value = big[y] * i;
-                big[y] = value;
-                carry = (value - (value % 10)) / 10;
-            }
-            big = process_carries(big, big.length);
-        }
-        if (raw) return big;
-        return big.join('');
-    };
-    return factorial;
-})();
+    a = a.split('').reverse();
+    b = b.split('').reverse();
+    const result = [];
 
-if (n === 0) {
-    print(1);
-} else {
-    print(factorial(n));
+    for (let i = 0; a[i] >= 0; i++) {
+        for (let j = 0; b[j] >= 0; j++) {
+            if (!result[i + j]) {
+                result[i + j] = 0;
+            }
+
+            result[i + j] += a[i] * b[j];
+        }
+    }
+
+    for (let i = 0; result[i] >= 0; i++) {
+        if (result[i] >= 10) {
+            if (!result[i + 1]) {
+                result[i + 1] = 0;
+            }
+
+            result[i + 1] += parseInt(result[i] / 10);
+            result[i] %= 10;
+        }
+    }
+
+    return result.reverse().join('');
+};
+
+let result = '1';
+for (let i = 1; i <= n; i++) {
+    result = multiply(result, i.toString());
 }
+
+print(result);

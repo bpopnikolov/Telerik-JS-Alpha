@@ -21,7 +21,7 @@ const addStringNumbers = (a, b) => {
             result[i] = 0;
         }
 
-        const next = (result[i] + sum) / 10 | 0;
+        const next = Math.floor((result[i] + sum) / 10);
         result[i] = (result[i] + sum) % 10;
 
         if (next) {
