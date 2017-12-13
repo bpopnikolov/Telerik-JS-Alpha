@@ -7,7 +7,7 @@ const result = [];
 const numbers = [];
 numbers.push(n);
 
-for (let i = 0; i < 20; i++) {
+for (let i = 0; i < m; i++) {
     const s = numbers.shift();
 
     result.push(s);
@@ -17,4 +17,4 @@ for (let i = 0; i < 20; i++) {
     numbers.push(s + 2);
 }
 
-print(result);
+print(result[m-1]);

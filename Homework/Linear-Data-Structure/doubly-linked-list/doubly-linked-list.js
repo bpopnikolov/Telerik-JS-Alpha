@@ -99,23 +99,24 @@ class LinkedList {
     removeAt(index) {
         this.isValidIndex(index);
 
-        if (index === 0 && !this.head) {
+        if (index < 0 && !this.head) {
             throw new Error('List is empty!');
         }
 
         if (index === 0) {
             const result = this.head.data;
-            this.length--;
-
+            
             if (this.length === 1) {
                 this.head = null;
                 this.tail = null;
+                this.length--;
                 return result;
             }
 
             this.head = this.head.next;
             this.head.previous.next = null;
             this.head.previous = null;
+            this.length--;
             return result;
         }
 
