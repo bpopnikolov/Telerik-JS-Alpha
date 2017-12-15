@@ -178,18 +178,4 @@ class LinkedList {
     }
 }
 
-// const list = new LinkedList();
-// list.append(4, 8, 9).insert(1, 5, 6, 7);
-// console.log(list.toArray());
-// list.removeAt(5);
-// console.log(list.toArray().toString());
-// list.removeAt(3);
-// console.log(list.toArray());
-// list.removeAt(0);
-// console.log(list.toArray());
-// console.log(list.length);
-// console.log('-'.repeat(30));
-
-// console.log(list.head);
-// console.log(list.tail);
 module.exports = LinkedList;
