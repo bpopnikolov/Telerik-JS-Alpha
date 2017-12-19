@@ -10,13 +10,13 @@ for (let i = input.length - 2; i >= 0; i--) {
     if ((input[i] > input[i + 1])) {
         continue;
     }
-    k = input.indexOf(input[i]);
+    k = i;
     break;
 }
 
 for (let j = input.length - 1; j >= 0; j--) {
     if (input[j] > input[k]) {
-        l = input.indexOf(input[j]);
+        l = j;
         break;
     }
 }

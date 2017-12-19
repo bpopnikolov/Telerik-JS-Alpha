@@ -1,19 +1,33 @@
 const gets = this.gets || require('readline-sync').question;
 const print = this.print || console.log;
 
-const [n, m] = gets().split(' ').map((x) => +x);
 
+const x = +gets();
+const y = +gets();
+const z = +gets();
 
-const number1 = gets().split(' ').map((x) => +x);
-const number2 = gets().split(' ').map((x) => +x);
+const calculateExpression = (n, m, p) => {
+
+    // implement mod()
+    const exp = (n * n + (1 / (m * p)) + 1337) / (n - (128.523123123 * p)) + Math.sin(mod(m, 180));
+
+    return exp;
+};
+
+const mod = (a, b) => {
+    return Math.floor(a % b);
+};
 
 
 const addStringNumbers = (a, b) => {
-    if (a === 0 && b === 0) {
+    if (+a === 0 && +b === 0) {
         return 0;
     }
 
+    a = a.split('').reverse();
+    b = b.split('').reverse();
     const result = [];
+
     for (let i = 0; i < Math.max(a, b); i++) {
         const sum = (a[i] || 0) + (b[i] || 0);
 
@@ -31,4 +45,4 @@ const addStringNumbers = (a, b) => {
     return result;
 };
 
-print(addStringNumbers(number1, number2).join(' '));
+print(calculateExpression(x, y, z).toFixed(6));
