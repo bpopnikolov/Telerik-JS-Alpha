@@ -55,6 +55,7 @@ gets().split(rgx).map((x) => {
     }
 });
 
+
 const decode = (encoded, decoded) => {
     if (encoded.length === 0) {
         decodedMsgs.push(decoded);
