@@ -1,22 +1,33 @@
 const gets = this.gets || require('readline-sync').question;
 const print = this.print || console.log;
 
-let encoded = gets();
+const encoded = gets().split('');
 const stack = [];
 
-
-let result = '';
-for (let i = 0; i < encoded.length; i++) {
+let i = 0;
+while (i < encoded.length) {
     if (encoded[i] === '{') {
         stack.push(i);
     }
+
     if (encoded[i] === '}') {
-        const start = stack.pop();
+        const startIndex = stack.pop();
+        let repeater = '';
 
-        const replaceWith = encoded.substring(start + 1, i).repeat(encoded[start - 1]);
-        console.log(replaceWith);
-        encoded = encoded.replace(encoded.substring(start - 1, i + 1), replaceWith);
-        print(encoded);
+        let j = startIndex - 1;
+
+        while (!isNaN(+encoded[j])) {
+            repeater = encoded[j] + repeater;
+            j -= 1;
+        }
+
+        encoded[i] = encoded.slice(startIndex + 1, i).join('').repeat(+repeater);
+
+        for (let k = startIndex - repeater.length; k < i; k++) {
+            encoded[k] = '';
+        }
     }
-}
 
+    i += 1;
+}
+print(encoded.join(''));
