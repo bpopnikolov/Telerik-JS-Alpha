@@ -1,26 +1,26 @@
 const gets = this.gets || require('readline-sync').question;
 const print = this.print || console.log;
 
-const generatePermutations = (inputArr) => {
+const generateVariations = (inputArr) => {
     const result = [];
 
-    const permute = (arr, m = []) => {
-        if (arr.length === 0) {
+    const variate = (arr, m = []) => {
+        if (m.length === k) {
             result.push(m);
         } else {
             for (let i = 0; i < arr.length; i++) {
                 const curr = arr.slice();
                 const next = curr.splice(i, 1);
-                permute(curr.slice(), m.concat(next));
+                variate(curr.slice(), m.concat(next));
             }
         }
     };
 
-    permute(inputArr);
+    variate(inputArr);
     return result;
 };
 
-const n = +gets();
+const [n, k] = gets().split(' ').map((x) => +x);
 const input = [];
 
 for (let i = 1; i <= n; i++) {
@@ -28,7 +28,7 @@ for (let i = 1; i <= n; i++) {
 }
 
 
-const perms = generatePermutations(input);
+const perms = generateVariations(input);
 
 perms.forEach((x) => {
     print(x.join(' '));

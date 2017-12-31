@@ -15,7 +15,7 @@ const calculateExpression = (n, m, p) => {
 };
 
 const mod = (a, b) => {
-    return Math.floor(a % b);
+    return Math.trunc(a % b);
 };
 
 

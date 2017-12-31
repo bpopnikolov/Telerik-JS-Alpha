@@ -52,4 +52,4 @@ const makeExpressions = (digits, target) => {
     return final;
 };
 
-print(makeExpressions(allDigits, value).length);
+print(makeExpressions(allDigits, value));
