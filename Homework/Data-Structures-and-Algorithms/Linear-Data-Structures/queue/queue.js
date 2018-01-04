@@ -16,6 +16,10 @@ class Queue {
     get length() {
         return this.linkedList.length;
     }
+
+    isEmpty() {
+        return this.linkedList.length === 0;
+    }
 }
 
 

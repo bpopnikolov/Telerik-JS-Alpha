@@ -5,8 +5,8 @@ class BinaryTree {
         this._right = right;
     }
 
-    get isLeaf() {
-        return this.left === null && this.right === null;
+    isLeaf() {
+        return this._left && this._right;
     }
 
     get left() {
@@ -16,16 +16,8 @@ class BinaryTree {
     get right() {
         return this._right;
     }
+
 }
 
-const tree = new BinaryTree(3, new BinaryTree(5), new BinaryTree(4));
-
-console.log(tree);
-console.log(tree.isLeaf);
-console.log(tree.left);
-console.log(tree.right);
-
-
-
-
-
+module.exports = BinaryTree;
+  
