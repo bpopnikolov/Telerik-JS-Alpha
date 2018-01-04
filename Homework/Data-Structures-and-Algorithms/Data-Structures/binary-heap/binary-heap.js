@@ -57,7 +57,7 @@ class BinaryHeap {
 
             if (index * 2 < this._heap.length) {
                 const smallestChildIndex = index * 2;
-                if (this._cmpFunc(this._heap[smallestChildIndex] < value)) {
+                if (this._cmpFunc(this._heap[smallestChildIndex], value)) {
                     this._heap[index] = this._heap[smallestChildIndex];
                     index = smallestChildIndex;
                 }
