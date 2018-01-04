@@ -67,20 +67,22 @@ class BinaryHeap {
     }
 }
 
+module.exports = BinaryHeap;
 
-const arr = [10, 5, 4, 7, 11, 13, 2, 1, 3, 17];
-const heap = new BinaryHeap((a, b) => a > b);
+// const arr = [10, 5, 4, 7, 11, 13, 2, 1, 3, 17];
+// const heap = new BinaryHeap((a, b) => a > b);
 
 // arr.forEach((x) => {
 //     heap.insert(x);
 //     console.log(heap.getTop());
 // });
-heap.insert(...arr);
-console.log(heap);
-const arr2 = [];
-for (let i = 0; !heap.isEmpty(); i++) {
-    arr2.push(heap.getTop());
-    heap.removeTop();
-}
-console.log(arr2);
-console.log(heap);
+// heap.insert(...arr);
+// console.log(heap);
+// const arr2 = [];
+// for (let i = 0; !heap.isEmpty(); i++) {
+//     arr2.push(heap.getTop());
+//     heap.removeTop();
+// }
+// console.log(arr2);
+// console.log(heap);
+
