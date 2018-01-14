@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Batman web</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="./styles/main.css" />
+    <script src="./js/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <nav class="nav-wrapper">
+            <ul class="navigation">
+                <li><a href="./index.html">Profile</a></li>
+                <li><a href="./friends.html">Friends</a></li>
+                <li><a class="active" href="./contacts.html">Contacts</a></li>
+                <li><a href="./trailers.html">Trailers</a></li>
+                <li><a href="./bases.html">Bases</a>
+                    <ul>
+                        <li><a href="#">Bat Cave</a></li>
+                        <li><a href="#">Justice League Tower</a></li>
+                    </ul>
+                </li>
+                <li><a href="./draw-batman.html">DrawBatman</a></li>
+            </ul>
+        </nav>
+        <hr>
+        <form action="">
+            <fieldset>
+                <legend>Send Batman a message</legend>
+                <div class="form-wrapper">
+                    <div class="col-1">
+                        <div>
+                            <label for="firstname">First name:</label>
+                            <input type="text" name="firstname" id="">
+                        </div>
+                        <div>
+                            <label for="lastname">Last name:</label>
+                            <input type="text" name="lastname" id="">
+                        </div>
+                        <div>
+                            <label for="email">Email:</label>
+                            <input type="email" name="email" id="">
+                        </div>
+                        <div class="radio">
+                            <p>Are you a friend ?</p>
+                            <label> <input type="radio" name="first" value="yes, of course"> Yes, of course </label>
+                            <label> <input type="radio" name="second" value="maybe"> Maybe </label>
+                            <label> <input type="radio" name="third" value="no"> NO</label>
+                            <label> <input type="radio" name="fourth" value="we'll seee"> We'll see </label>
+                        </div>
+                        <button type="submit" form="form1" value="Submit">Send</button>
+                    </div>
+                    <div class="col-2">
+                        <div>
+                            <label for="msg">Message:</label>
+                            <textarea name="msg" id="" cols="25" rows="4">Please drop a line here</textarea>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</body>
+
+</html>

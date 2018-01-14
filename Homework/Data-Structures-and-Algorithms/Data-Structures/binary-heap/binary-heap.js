@@ -24,7 +24,7 @@ class BinaryHeap {
 
             // use this._heap[index] instead of value if swapping
             // value all the time and unncomment code below.
-            while (index > 1 && this._cmpFunc(value, this._heap[Math.trunc(index / 2)])) {
+            while (index > 1 && this._cmpFunc(value[0], this._heap[Math.trunc(index / 2)])) {
                 // comment this if using swapping.
                 this._heap[index] = this._heap[Math.trunc(index / 2)];
                 // [this._heap[index],
